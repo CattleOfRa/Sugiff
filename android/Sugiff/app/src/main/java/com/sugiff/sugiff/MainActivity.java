@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 
+import com.facebook.AccessToken;
 import com.facebook.CallbackManager;
 import com.facebook.FacebookCallback;
 import com.facebook.FacebookException;
@@ -33,6 +34,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onSuccess(LoginResult loginResult) {
                 System.out.println("onSuccess");
+                AccessToken token = AccessToken.getCurrentAccessToken();
+                Log.d("Access Token is", token.getToken());
             }
 
             @Override
@@ -45,6 +48,7 @@ public class MainActivity extends AppCompatActivity {
                 Log.v("LoginActivity", exception.getCause().toString());
             }
         });
+
 
     }
 
