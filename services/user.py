@@ -8,7 +8,7 @@ class user(object):
         """Access facebook user information through access token"""
 
         self.access_token = access_token
-        self.access_token = 'EAAQRjZAUNIncBAAAQ123btvEBBAUoZAYKnwXZBwVR3VI1gzSqZALjcLGCOi3xi1ZBUoNuIVPBFngzrHA6gjcTtyTxTzLtkYqLbCKAiRZBpW1WKGY6tzULtk5uZAI8y6tMG8NxuuCfJLmYDDZBbWv1dpZBJ0VqorPzZAPWh7Mc1jXBZCZAf1EEg6d8ZBvv'
+        self.access_token = 'EAAQRjZAUNIncBALbpmCThVZBO7ZB0ZCQP0No3HDr1goXYa1vxZCAurLZBt2W7ei53eEaIT8aAgenE6XGayhSI2ZAOlrxwKWHc4BKp5Xkgmru3Rs3ExN4ObLgs8m0gi4TSlVosn3nKiJAqA82TXC6hFvkfobVqbllicw78H83ltyaqamGKNRIDxH'
         self.version = version
         self.graph = facebook.GraphAPI(access_token=self.access_token, version=self.version)
 
