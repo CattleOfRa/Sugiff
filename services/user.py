@@ -3,17 +3,19 @@ import facebook
 
 class user(object):
 
-    def __init__(self, access_token):
+
+    def __init__(self, access_token, version='2.7'):
         """Access facebook user information through access token"""
 
         self.access_token = access_token
-        self.access_token = 'EAAQRjZAUNIncBAGeBy3mZBMn3BkEHXu0KgoVvKFcQe3cDrlfyJD6uop5UwTZBnrn3r55Y219HZAvpqCaqkYdSoqPsZBhLtTBT6sXWjkaW0hj1GntCZB3yEu968jH1LwCYZCajij8cefTW7NDPVIf7oIvKGBZCOSj7N5PYpbPdaJLH5oTo2Hg6fco'
-        graph = facebook.GraphAPI(access_token=at, version='2.7')
+        self.access_token = 'EAAQRjZAUNIncBAAAQ123btvEBBAUoZAYKnwXZBwVR3VI1gzSqZALjcLGCOi3xi1ZBUoNuIVPBFngzrHA6gjcTtyTxTzLtkYqLbCKAiRZBpW1WKGY6tzULtk5uZAI8y6tMG8NxuuCfJLmYDDZBbWv1dpZBJ0VqorPzZAPWh7Mc1jXBZCZAf1EEg6d8ZBvv'
+        self.version = version
+        self.graph = facebook.GraphAPI(access_token=self.access_token, version=self.version)
 
     def get_birthdays(self):
         """Get user's list of upcoming birthdays"""
 
         args = {'fields' : 'birthday,name' }
-        events = graph.get_object("me/friends", **args)
+        events = self.graph.get_object("me/friends", **args)
         return events
 

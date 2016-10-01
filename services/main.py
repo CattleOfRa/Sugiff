@@ -7,7 +7,8 @@ app.config['DEBUG'] = True
 @app.route('/', methods=['POST', 'GET'])
 def login():
     access_token = request.args.get('t')
-    print(access_token)
+    u = user('')
+    print(u.get_birthdays())
     return ""
 
 if __name__ == '__main__':
